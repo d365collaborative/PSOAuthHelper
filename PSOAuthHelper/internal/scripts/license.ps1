@@ -1,4 +1,4 @@
-New-PSFLicense -Product 'PSOAuthHelper' -Manufacturer 'Motz' -ProductVersion $script:ModuleVersion -ProductType Module -Name MIT -Version "1.0.0.0" -Date (Get-Date "2019-02-28") -Text @"
+﻿New-PSFLicense -Product 'PSOAuthHelper' -Manufacturer 'Motz' -ProductVersion $script:ModuleVersion -ProductType Module -Name MIT -Version "1.0.0.0" -Date (Get-Date "2019-02-28") -Text @"
 Copyright (c) 2019 Motz
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
