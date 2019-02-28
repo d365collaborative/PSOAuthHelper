@@ -3,19 +3,19 @@
 	ModuleToProcess = 'PSOAuthHelper.psm1'
 	
 	# Version number of this module.
-	ModuleVersion = '1.0.0'
+	ModuleVersion = '0.1.0'
 	
 	# ID used to uniquely identify this module
 	GUID = 'c2de095c-331d-4568-833f-e70bedc8fa5e'
 	
 	# Author of this module
-	Author = 'Motz'
+	Author            = 'Mötz Jensen & Rasmus Andersen'
 	
 	# Company or vendor of this module
-	CompanyName = 'MyCompany'
+	CompanyName = ''
 	
 	# Copyright statement for this module
-	Copyright = 'Copyright (c) 2019 Motz'
+	Copyright         = '(c) 2019 Mötz Jensen & Rasmus Andersen. All rights reserved.'
 	
 	# Description of the functionality provided by this module
 	Description = ''
@@ -63,19 +63,22 @@
 		PSData = @{
 			
 			# Tags applied to this module. These help with module discovery in online galleries.
-			# Tags = @()
+			Tags         = @('OAuth', 'OAuth2.0', 'GrantType', 'Token', 'Bearer')
 			
 			# A URL to the license for this module.
-			# LicenseUri = ''
+			LicenseUri   = "https://opensource.org/licenses/MIT"
 			
 			# A URL to the main website for this project.
-			# ProjectUri = ''
+			ProjectUri   = 'https://github.com/d365collaborative/PSOAuthHelper'
 			
 			# A URL to an icon representing this module.
 			# IconUri = ''
 			
 			# ReleaseNotes of this module
 			# ReleaseNotes = ''
+
+			# Indicates this is a pre-release/testing version of the module.
+            IsPrerelease = 'True'
 			
 		} # End of PSData hashtable
 		
