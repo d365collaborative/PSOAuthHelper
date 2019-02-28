@@ -39,7 +39,9 @@
 	# FormatsToProcess = @('xml\PSOAuthHelper.Format.ps1xml')
 	
 	# Functions to export from this module
-	FunctionsToExport = ''
+	FunctionsToExport = @(
+							'Invoke-ClientCredentialsGrant'
+	)
 	
 	# Cmdlets to export from this module
 	CmdletsToExport = ''

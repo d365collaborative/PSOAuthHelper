@@ -29,6 +29,7 @@
         [string] $Scope
     )
 
+
     $parms = @{}
     $parms.resource = [System.Web.HttpUtility]::UrlEncode($Resource)
     $parms.grant_type = [System.Web.HttpUtility]::UrlEncode($GrantType)
@@ -61,5 +62,5 @@
         return
     }
 
-    $Authorization.access_token
+    $Authorization
 }
