@@ -30,19 +30,25 @@
         The Client Secret that you want to use for the authentication process
         
     .PARAMETER Username
-        Parameter description
+        Username for the user that you want to authenticate as
         
     .PARAMETER Password
-        Parameter description
+        Password for the user that you want to authenticate as
         
     .PARAMETER Scope
-        Parameter description
+        The scope details that you want the token to valid for
         
     .EXAMPLE
-        An example
+        PS C:\> Invoke-Authorization -AuthProviderUri "https://login.microsoftonline.com/e674da86-7ee5-40a7-b777-1111111111111/oauth2/token" -Resource "https://www.superfantasticservername.com" -GrantType "client_credentials" -ClientId "dea8d7a9-1602-4429-b138-111111111111" -ClientSecret "Vja/VmdxaLOPR+alkjfsadffelkjlfw234522="
         
+        This will invoke an OAuth Client Credentials Grant flow against Azure Active Directory for the tenant id "e674da86-7ee5-40a7-b777-1111111111111".
+        The token will be valid for the "https://www.superfantasticservername.com" resource.
+        The ClientId is "dea8d7a9-1602-4429-b138-111111111111".
+        The ClientSecret is "Vja/VmdxaLOPR+alkjfsadffelkjlfw234522="
+
     .NOTES
-        General notes
+        Author: Mötz Jensen (@Splaxi)
+        
 #>
 
 function Invoke-Authorization {
