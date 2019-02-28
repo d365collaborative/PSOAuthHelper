@@ -3,7 +3,7 @@
 	ModuleToProcess = 'PSOAuthHelper.psm1'
 	
 	# Version number of this module.
-	ModuleVersion = '0.1.0'
+	ModuleVersion = '0.1.1'
 	
 	# ID used to uniquely identify this module
 	GUID = 'c2de095c-331d-4568-833f-e70bedc8fa5e'
