@@ -37,19 +37,6 @@
 			$parameter.ParameterSets['__AllParameterSets'].ValueFromPipelineByPropertyName | Should -Be $False
 			$parameter.ParameterSets['__AllParameterSets'].ValueFromRemainingArguments | Should -Be $False
 		}
-		It 'Should have the expected parameter GrantType' {
-			$parameter = (Get-Command Invoke-ClientCredentialsGrant).Parameters['GrantType']
-			$parameter.Name | Should -Be 'GrantType'
-			$parameter.ParameterType.ToString() | Should -Be System.String
-			$parameter.IsDynamic | Should -Be $False
-			$parameter.ParameterSets.Keys | Should -Be '__AllParameterSets'
-			$parameter.ParameterSets.Keys | Should -Contain '__AllParameterSets'
-			$parameter.ParameterSets['__AllParameterSets'].IsMandatory | Should -Be $True
-			$parameter.ParameterSets['__AllParameterSets'].Position | Should -Be 3
-			$parameter.ParameterSets['__AllParameterSets'].ValueFromPipeline | Should -Be $False
-			$parameter.ParameterSets['__AllParameterSets'].ValueFromPipelineByPropertyName | Should -Be $False
-			$parameter.ParameterSets['__AllParameterSets'].ValueFromRemainingArguments | Should -Be $False
-		}
 		It 'Should have the expected parameter ClientId' {
 			$parameter = (Get-Command Invoke-ClientCredentialsGrant).Parameters['ClientId']
 			$parameter.Name | Should -Be 'ClientId'
@@ -93,8 +80,8 @@
 	
 	Describe "Testing parameterset __AllParameterSets" {
 		<#
-		__AllParameterSets -AuthProviderUri -Resource -GrantType
-		__AllParameterSets -AuthProviderUri -Resource -GrantType -ClientId -ClientSecret -Scope
+		__AllParameterSets -AuthProviderUri -Resource
+		__AllParameterSets -AuthProviderUri -Resource -ClientId -ClientSecret -Scope
 		#>
 	}
 
