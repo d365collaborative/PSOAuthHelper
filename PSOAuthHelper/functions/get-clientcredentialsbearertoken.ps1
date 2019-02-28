@@ -58,5 +58,5 @@ function Get-ClientCredentialsBearerToken {
 
     $requestToken = Invoke-ClientCredentialsGrant @PSBoundParameters
     
-    "Bearer $($requestToken.access_token)"
+    "Bearer $($requestToken.access_token)" 
 }
