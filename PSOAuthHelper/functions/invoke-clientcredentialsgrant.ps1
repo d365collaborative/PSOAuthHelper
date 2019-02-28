@@ -41,9 +41,6 @@ function Invoke-ClientCredentialsGrant {
         [Parameter(Mandatory = $true, Position = 2)]
         [string] $Resource,
 
-        [Parameter(Mandatory = $true, Position = 3)]
-        [string] $GrantType,
-
         [Parameter(Mandatory = $false, Position = 4)]
         [string] $ClientId,
 
@@ -54,5 +51,5 @@ function Invoke-ClientCredentialsGrant {
         [string] $Scope
     )
 
-    Invoke-Authorization @PSBoundParameters
+    Invoke-Authorization @PSBoundParameters -GrantType "client_credentials"
 }

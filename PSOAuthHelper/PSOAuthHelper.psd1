@@ -40,7 +40,7 @@
 	
 	# Functions to export from this module
 	FunctionsToExport = @(
-							'Get-BearerToken',
+							'Get-ClientCredentialsBearerToken',
 							'Invoke-ClientCredentialsGrant'
 	)
 	
