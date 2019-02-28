@@ -1,0 +1,11 @@
+TOPIC
+	about_PSOAuthHelper
+	
+SHORT DESCRIPTION
+	Explains how to use the PSOAuthHelper powershell module
+	
+LONG DESCRIPTION
+	<Insert Content here>
+
+KEYWORDS
+	PSOAuthHelper

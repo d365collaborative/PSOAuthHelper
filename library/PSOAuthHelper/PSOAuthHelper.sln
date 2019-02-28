@@ -1,0 +1,25 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E334740F-BE79-4B6A-9DD1-5F061F05C88A}") = "PSOAuthHelper", "PSOAuthHelper\PSOAuthHelper.csproj", "{9813449D-AF4A-4ADC-9534-663185EBCF61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9813449D-AF4A-4ADC-9534-663185EBCF61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9813449D-AF4A-4ADC-9534-663185EBCF61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9813449D-AF4A-4ADC-9534-663185EBCF61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9813449D-AF4A-4ADC-9534-663185EBCF61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E20AD5C-4764-4118-A693-C2920DF0A284}
+	EndGlobalSection
+EndGlobal
