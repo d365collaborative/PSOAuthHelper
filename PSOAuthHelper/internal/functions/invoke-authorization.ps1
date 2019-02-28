@@ -1,4 +1,42 @@
-﻿function Invoke-Authorization {
+﻿<#
+.SYNOPSIS
+Short description
+
+.DESCRIPTION
+Long description
+
+.PARAMETER AuthProviderUri
+Parameter description
+
+.PARAMETER Resource
+Parameter description
+
+.PARAMETER GrantType
+Parameter description
+
+.PARAMETER ClientId
+Parameter description
+
+.PARAMETER ClientSecret
+Parameter description
+
+.PARAMETER Username
+Parameter description
+
+.PARAMETER Password
+Parameter description
+
+.PARAMETER Scope
+Parameter description
+
+.EXAMPLE
+An example
+
+.NOTES
+General notes
+#>
+
+function Invoke-Authorization {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword", "")]
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPassWordParams", "")]
     [CmdletBinding()]
