@@ -38,7 +38,7 @@
 
 function Get-ClientCredentialsBearerToken {
     [CmdletBinding()]
-    [OutputType()]
+    [OutputType('System.String')]
     param (
         [Parameter(Mandatory = $True, Position = 1)]
         [string] $AuthProviderUri,

@@ -1,25 +1,33 @@
 ﻿
 <#
     .SYNOPSIS
-        Short description
+        Invoke an OAuth 2.0 authorization request
         
     .DESCRIPTION
-        Long description
+        Invoke an OAuth 2.0 grant type flow request
         
     .PARAMETER AuthProviderUri
-        Parameter description
+        The URL / URI for the authorization server
         
     .PARAMETER Resource
-        Parameter description
+        The URL / URI for the protected resource you want the token to be valid to
         
     .PARAMETER GrantType
-        Parameter description
+        The OAuth flow you want to utilize
+
+        Valid Options:
+        Authorization Code
+        Implicit
+        Password
+        Client Credentials
+        Device Code
+        Refresh Token
         
     .PARAMETER ClientId
-        Parameter description
+        The Client Id that you want to use for the authentication process
         
     .PARAMETER ClientSecret
-        Parameter description
+        The Client Secret that you want to use for the authentication process
         
     .PARAMETER Username
         Parameter description

@@ -1,28 +1,48 @@
 ﻿
 <#
     .SYNOPSIS
-        Short description
+        Convert HashTable into an array
         
     .DESCRIPTION
-        Long description
+        Convert HashTable with switches inside into an array of Key:Value
         
     .PARAMETER InputObject
-        Parameter description
+        The HashTable object that you want to work against
+        
+        Shold only contain Key / Vaule, where value is $true or $false
         
     .PARAMETER KeyPrefix
-        Parameter description
+        The prefix that you want to append to the key of the HashTable
+        
+        The default value is "-"
         
     .PARAMETER ValuePrefix
-        Parameter description
+        The prefix that you want to append to the value of the HashTable
+        
+        The default value is ":"
         
     .PARAMETER KeepCase
-        Parameter description
+        Instruct the cmdlet to keep the naming case of the properties from the hashtable
+        
+        Default value is: $true
         
     .EXAMPLE
-        An example
+        PS C:\> $params = @{NoPrompt = $true; CreateParents = $false}
+        PS C:\> $arguments = Convert-HashToArgStringSwitch -Inputs $params
+        
+        This will convert the $params into an array of strings, each with the "-Key:Value" pattern.
+        
+    .EXAMPLE
+        PS C:\> $params = @{NoPrompt = $true; CreateParents = $false}
+        PS C:\> $arguments = Convert-HashToArgStringSwitch -InputObject $params -KeyPrefix "&" -ValuePrefix "="
+        
+        This will convert the $params into an array of strings, each with the "&Key=Value" pattern.
         
     .NOTES
-        General notes
+        Tags: HashTable, Arguments
+        
+        Author: Mötz Jensen (@Splaxi)
+        
 #>
 
 function Convert-HashToArgStringSwitch {

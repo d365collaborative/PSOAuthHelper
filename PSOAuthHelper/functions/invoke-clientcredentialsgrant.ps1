@@ -1,34 +1,37 @@
 ﻿
 <#
     .SYNOPSIS
-        Short description
+        Invoke a Client Credentials authorization flow
         
     .DESCRIPTION
-        Long description
+        Invoke an OAuth 2.0 Client Credentials Grant flow against the authorization server
         
     .PARAMETER AuthProviderUri
-        Parameter description
+        The URL / URI for the authorization server
         
     .PARAMETER Resource
-        Parameter description
-        
-    .PARAMETER GrantType
-        Parameter description
-        
+        The URL / URI for the protected resource you want the token to be valid to
+
     .PARAMETER ClientId
-        Parameter description
+        The Client Id that you want to use for the authentication process
         
     .PARAMETER ClientSecret
-        Parameter description
+        The Client Secret that you want to use for the authentication process
         
     .PARAMETER Scope
-        Parameter description
+        The scope details that you want the token to valid for
         
     .EXAMPLE
-        An example
+        PS C:\> Invoke-ClientCredentialsGrant -AuthProviderUri "https://login.microsoftonline.com/e674da86-7ee5-40a7-b777-1111111111111/oauth2/token" -Resource "https://www.superfantasticservername.com" -ClientId "dea8d7a9-1602-4429-b138-111111111111" -ClientSecret "Vja/VmdxaLOPR+alkjfsadffelkjlfw234522="
         
+        This will invoke an OAuth Client Credentials Grant flow against Azure Active Directory for the tenant id "e674da86-7ee5-40a7-b777-1111111111111".
+        The token will be valid for the "https://www.superfantasticservername.com" resource.
+        The ClientId is "dea8d7a9-1602-4429-b138-111111111111".
+        The ClientSecret is "Vja/VmdxaLOPR+alkjfsadffelkjlfw234522="
+                
     .NOTES
-        General notes
+        Author: Mötz Jensen (@Splaxi)
+
 #>
 
 function Invoke-ClientCredentialsGrant {
