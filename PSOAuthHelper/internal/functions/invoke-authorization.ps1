@@ -57,7 +57,7 @@ function Invoke-Authorization {
     [CmdletBinding()]
     [OutputType('System.String')]
     param (
-        [Parameter(Mandatory = $True, Position = 1)]
+        [Parameter(Mandatory = $true, Position = 1)]
         [string] $AuthProviderUri,
 
         [Parameter(Mandatory = $true, Position = 2)]
