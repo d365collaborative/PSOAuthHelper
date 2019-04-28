@@ -1,6 +1,7 @@
 ﻿function New-AuthorizationHeaderBearerToken {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseShouldProcessForStateChangingFunctions", "")]
     [CmdletBinding()]
-    [OutputType()]
+    [OutputType('System.Collections.Hashtable')]
     param (
         [Parameter(Mandatory = $true, Position = 1)]
         [Alias('URI')]
