@@ -11,7 +11,7 @@
         
     .PARAMETER Resource
         The URL / URI for the protected resource you want the token to be valid to
-
+        
     .PARAMETER ClientId
         The Client Id that you want to use for the authentication process
         
@@ -28,10 +28,10 @@
         The token will be valid for the "https://www.superfantasticservername.com" resource.
         The ClientId is "dea8d7a9-1602-4429-b138-111111111111".
         The ClientSecret is "Vja/VmdxaLOPR+alkjfsadffelkjlfw234522="
-                
+        
     .NOTES
         Author: Mötz Jensen (@Splaxi)
-
+        
 #>
 
 function Invoke-ClientCredentialsGrant {
