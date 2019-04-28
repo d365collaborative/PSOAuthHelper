@@ -18,7 +18,7 @@
 	Copyright         = '(c) 2019 Mötz Jensen. All rights reserved.'
 	
 	# Description of the functionality provided by this module
-	Description = ''
+	Description = 'A simple module that helps you with all the dirty details while trying to authenticate against different OAuth 2.0 endpoints.'
 	
 	# Minimum version of the Windows PowerShell engine required by this module
 	PowerShellVersion = '5.0'
