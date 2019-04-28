@@ -3,19 +3,19 @@
 	ModuleToProcess = 'PSOAuthHelper.psm1'
 	
 	# Version number of this module.
-	ModuleVersion = '0.1.1'
+	ModuleVersion = '0.2.0'
 	
 	# ID used to uniquely identify this module
 	GUID = 'c2de095c-331d-4568-833f-e70bedc8fa5e'
 	
 	# Author of this module
-	Author            = 'Mötz Jensen & Rasmus Andersen'
+	Author            = 'Mötz Jensen'
 	
 	# Company or vendor of this module
 	CompanyName = ''
 	
 	# Copyright statement for this module
-	Copyright         = '(c) 2019 Mötz Jensen & Rasmus Andersen. All rights reserved.'
+	Copyright         = '(c) 2019 Mötz Jensen. All rights reserved.'
 	
 	# Description of the functionality provided by this module
 	Description = ''
@@ -41,7 +41,8 @@
 	# Functions to export from this module
 	FunctionsToExport = @(
 							'Get-ClientCredentialsBearerToken',
-							'Invoke-ClientCredentialsGrant'
+							'Invoke-ClientCredentialsGrant',
+							'New-AuthorizationHeaderBearerToken'
 	)
 	
 	# Cmdlets to export from this module
