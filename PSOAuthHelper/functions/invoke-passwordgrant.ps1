@@ -20,7 +20,7 @@
         
     .PARAMETER Password
         Password for the user that you want to authenticate as
-
+        
     .PARAMETER Scope
         The scope details that you want the token to valid for
         
