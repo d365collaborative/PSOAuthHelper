@@ -5,32 +5,34 @@ online version:
 schema: 2.0.0
 ---
 
-# Invoke-ClientCredentialsGrant
+# Invoke-PasswordGrant
 
 ## SYNOPSIS
-Invoke a Client Credentials authorization flow
+Invoke a password authorization flow
 
 ## SYNTAX
 
 ```
-Invoke-ClientCredentialsGrant [-AuthProviderUri] <String> [-Resource] <String> [[-ClientId] <String>]
- [[-ClientSecret] <String>] [[-Scope] <String>] [<CommonParameters>]
+Invoke-PasswordGrant [-AuthProviderUri] <String> [-Resource] <String> [[-ClientId] <String>]
+ [[-Username] <String>] [[-Password] <String>] [[-Scope] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke an OAuth 2.0 Client Credentials Grant flow against the authorization server
+Invoke an OAuth 2.0 Password Grant flow against the authorization server
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-Invoke-ClientCredentialsGrant -AuthProviderUri "https://login.microsoftonline.com/e674da86-7ee5-40a7-b777-1111111111111/oauth2/token" -Resource "https://www.superfantasticservername.com" -ClientId "dea8d7a9-1602-4429-b138-111111111111" -ClientSecret "Vja/VmdxaLOPR+alkjfsadffelkjlfw234522="
+Invoke-PasswordGrant -AuthProviderUri "https://login.microsoftonline.com/common/oauth2/token" -Resource "https://www.superfantasticservername.com" -ClientId "dea8d7a9-1602-4429-b138-111111111111" -Username "serviceaccount@domain.com" -Password "TopSecretPassword" -Scope "openid"
 ```
 
-This will invoke an OAuth Client Credentials Grant flow against Azure Active Directory for the tenant id "e674da86-7ee5-40a7-b777-1111111111111".
+This will invoke an OAuth Password Grant flow against Azure Active Directory for the common endpoint.
 The token will be valid for the "https://www.superfantasticservername.com" resource.
 The ClientId is "dea8d7a9-1602-4429-b138-111111111111".
-The ClientSecret is "Vja/VmdxaLOPR+alkjfsadffelkjlfw234522="
+The Username is "serviceaccount@domain.com".
+The Password is "TopSecretPassword".
+The Scope is "openid".
 
 ## PARAMETERS
 
@@ -79,8 +81,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ClientSecret
-The Client Secret that you want to use for the authentication process
+### -Username
+Username for the user that you want to authenticate as
 
 ```yaml
 Type: String
@@ -89,6 +91,21 @@ Aliases:
 
 Required: False
 Position: 6
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Password
+Password for the user that you want to authenticate as
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
