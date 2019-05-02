@@ -37,6 +37,9 @@
         
     .PARAMETER Scope
         The scope details that you want the token to valid for
+
+    .PARAMETER RefreshToken
+        The Refresh Token that you want to use for the authentication process
         
     .EXAMPLE
         PS C:\> Invoke-Authorization -AuthProviderUri "https://login.microsoftonline.com/e674da86-7ee5-40a7-b777-1111111111111/oauth2/token" -Resource "https://www.superfantasticservername.com" -GrantType "client_credentials" -ClientId "dea8d7a9-1602-4429-b138-111111111111" -ClientSecret "Vja/VmdxaLOPR+alkjfsadffelkjlfw234522="
