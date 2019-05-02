@@ -33,7 +33,8 @@ function New-AuthorizationHeaderBearerToken {
         [Alias('URI')]
         [string] $URL,
 
-        [Parameter(Mandatory = $true, Position = 2)]
+        [Parameter(Mandatory = $true, ValueFromPipelineByPropertyName = $true, Position = 2)]
+        [Alias('access_token')]
         [string] $BearerToken
     )
 

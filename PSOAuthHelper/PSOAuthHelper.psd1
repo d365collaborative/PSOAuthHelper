@@ -40,11 +40,13 @@
 	
 	# Functions to export from this module
 	FunctionsToExport = @(
-							'Get-ClientCredentialsBearerToken',
+							'Get-BearerToken',
+
 							'Invoke-ClientCredentialsGrant',
 							'Invoke-PasswordGrant',
-							'New-AuthorizationHeaderBearerToken',
-							'Invoke-RefreshToken'
+							'Invoke-RefreshToken',
+
+							'New-AuthorizationHeaderBearerToken'
 	)
 	
 	# Cmdlets to export from this module
