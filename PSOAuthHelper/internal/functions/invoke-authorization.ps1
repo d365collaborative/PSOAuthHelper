@@ -37,7 +37,7 @@
         
     .PARAMETER Scope
         The scope details that you want the token to valid for
-
+        
     .PARAMETER RefreshToken
         The Refresh Token that you want to use for the authentication process
         

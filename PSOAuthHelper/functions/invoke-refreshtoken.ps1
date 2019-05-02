@@ -23,13 +23,13 @@
         The RefreshToken is "Tsdljfasfe2j32324".
         
     .LINK
-    Invoke-PasswordGrant
-
+        Invoke-PasswordGrant
+        
     .NOTES
-    
-    Tags: Refresh, Token, ClientId
-
-    Author: Mötz Jensen (@Splaxi)
+        
+        Tags: Refresh, Token, ClientId
+        
+        Author: Mötz Jensen (@Splaxi)
         
 #>
 
