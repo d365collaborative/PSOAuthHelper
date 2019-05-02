@@ -42,6 +42,8 @@ function Invoke-ClientCredentialsGrant {
         [string] $AuthProviderUri,
 
         [Parameter(Mandatory = $true, Position = 2)]
+        [Alias('URL')]
+        [Alias('URI')]
         [string] $Resource,
 
         [Parameter(Mandatory = $false, Position = 4)]
