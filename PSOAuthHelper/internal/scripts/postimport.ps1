@@ -21,8 +21,4 @@ foreach ($file in (Get-ChildItem "$($script:ModuleRoot)\internal\tepp\*.tepp.ps1
 # Load License
 . Import-ModuleFile -Path "$($script:ModuleRoot)\internal\scripts\license.ps1"
 
-# Add the System.Web type
-Add-Type -AssemblyName System.Web
-
-# Add the System.Net.Http type
-Add-Type -AssemblyName System.Net.Http
+. Import-ModuleFile -Path "$($script:ModuleRoot)\internal\scripts\loadassemblies.ps1"

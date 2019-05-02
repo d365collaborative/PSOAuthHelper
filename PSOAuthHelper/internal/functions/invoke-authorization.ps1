@@ -57,10 +57,10 @@ function Invoke-Authorization {
     [CmdletBinding()]
     [OutputType('System.String')]
     param (
-        [Parameter(Mandatory = $True, Position = 1)]
+        [Parameter(Mandatory = $true, Position = 1)]
         [string] $AuthProviderUri,
 
-        [Parameter(Mandatory = $true, Position = 2)]
+        [Parameter(Mandatory = $false, Position = 2)]
         [string] $Resource,
 
         [Parameter(Mandatory = $true, Position = 3)]
@@ -79,7 +79,10 @@ function Invoke-Authorization {
         [string] $Password,
 
         [Parameter(Mandatory = $false, Position = 8)]
-        [string] $Scope
+        [string] $Scope,
+
+        [Parameter(Mandatory = $false, Position = 9)]
+        [string] $RefreshToken
     )
 
 
@@ -96,6 +99,9 @@ function Invoke-Authorization {
     if (-not ($Password -eq "")) {$parms.password = [System.Web.HttpUtility]::UrlEncode($Password)}
 
     if (-not ($Scope -eq "")) {$parms.scope = [System.Web.HttpUtility]::UrlEncode($Scope)}
+
+    if (-not ($RefreshToken -eq "")) {$parms.refresh_token = [System.Web.HttpUtility]::UrlEncode($RefreshToken)}
+    
 
     $body = (Convert-HashToArgStringSwitch -InputObject $parms -KeyPrefix "&" -ValuePrefix "=") -join ""
 

@@ -3,7 +3,7 @@
 	RootModule = 'PSOAuthHelper.psm1'
 
 	# Version number of this module.
-	ModuleVersion = '0.2.2'
+	ModuleVersion = '0.2.3'
 	
 	# ID used to uniquely identify this module
 	GUID = 'c2de095c-331d-4568-833f-e70bedc8fa5e'
@@ -43,7 +43,8 @@
 							'Get-ClientCredentialsBearerToken',
 							'Invoke-ClientCredentialsGrant',
 							'Invoke-PasswordGrant',
-							'New-AuthorizationHeaderBearerToken'
+							'New-AuthorizationHeaderBearerToken',
+							'Invoke-RefreshToken'
 	)
 	
 	# Cmdlets to export from this module
