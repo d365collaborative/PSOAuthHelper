@@ -44,7 +44,7 @@ Aliases:
 Required: True
 Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -59,7 +59,7 @@ Aliases:
 Required: False
 Position: 3
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -74,7 +74,7 @@ Aliases:
 Required: False
 Position: 4
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -87,6 +87,11 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 ## OUTPUTS
 
 ## NOTES
+Tags: Refresh, Token, ClientId
+
 Author: Mötz Jensen (@Splaxi)
 
 ## RELATED LINKS
+
+[Invoke-PasswordGrant]()
+

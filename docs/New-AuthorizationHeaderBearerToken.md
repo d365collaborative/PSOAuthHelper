@@ -51,12 +51,12 @@ The token value received from your earlier OAuth 2.0 flow
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: access_token
 
 Required: True
 Position: 3
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
