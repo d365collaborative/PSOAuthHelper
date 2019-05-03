@@ -7,7 +7,7 @@
         Easy way to create a bearer token string from a object
         
     .PARAMETER InputObject
-        The object you received from any of the invoke-* commands that returns an access token
+        The object you received from any of the Invoke-* commands that returns an access token
         
     .PARAMETER Raw
         Instruct the cmdlets to return just the token value as a raw string

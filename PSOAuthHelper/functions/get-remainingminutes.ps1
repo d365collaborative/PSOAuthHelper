@@ -7,7 +7,7 @@
         Pass the token object directly into the cmdlet and see how many minutes are left before the token expires
         
     .PARAMETER InputObject
-        The token object received from you invoke-* cmdlets
+        The object you received from any of the Invoke-* commands that returns an access token
         
     .EXAMPLE
         PS C:\> Get-RemainingMinutes -InputObject $TokenObject
@@ -28,8 +28,9 @@
 #>
 
 function Get-RemainingMinutes {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseSingularNouns", "")]
     [CmdletBinding()]
-    [OutputType()]
+    [OutputType('System.Int32')]
     param (
         [Parameter(Mandatory = $true, Position = 1)]
         [PSCustomObject] $InputObject

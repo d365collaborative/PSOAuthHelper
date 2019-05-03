@@ -15,6 +15,9 @@
     .PARAMETER RefreshToken
         The Refresh Token that you want to use for the authentication process
         
+    .PARAMETER InputObject
+        The object you received from any of the Invoke-* commands that returns an access token
+        
     .EXAMPLE
         PS C:\> Invoke-RefreshToken -AuthProviderUri "https://login.microsoftonline.com/common/oauth2/token" -ClientId "dea8d7a9-1602-4429-b138-111111111111" -RefreshToken "Tsdljfasfe2j32324"
         
