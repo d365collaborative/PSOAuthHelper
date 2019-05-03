@@ -32,7 +32,7 @@ Then it will pass the output to the Get-BearerToken through the pipeline.
 ## PARAMETERS
 
 ### -InputObject
-The object you received from any of the invoke-* commands that returns an access token
+The object you received from any of the Invoke-* commands that returns an access token
 
 ```yaml
 Type: PSObject

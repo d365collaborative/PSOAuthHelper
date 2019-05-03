@@ -26,10 +26,12 @@ Pass the token object directly into the cmdlet and see how many minutes are left
 Get-RemainingMinutes -InputObject $TokenObject
 ```
 
+This will analyse the expires_on and compare it with NOW, to see how many minutes there is left before the token will be expired.
+
 ## PARAMETERS
 
 ### -InputObject
-The token object received from you invoke-* cmdlets
+The object you received from any of the Invoke-* commands that returns an access token
 
 ```yaml
 Type: PSObject
@@ -51,6 +53,7 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 
 ## OUTPUTS
 
+### System.Int32
 ## NOTES
 Tags: Token, Expiration, Expire
 

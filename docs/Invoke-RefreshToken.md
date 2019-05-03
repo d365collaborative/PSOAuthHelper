@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-{{Fill InputObject Description}}
+The object you received from any of the Invoke-* commands that returns an access token
 
 ```yaml
 Type: PSObject
