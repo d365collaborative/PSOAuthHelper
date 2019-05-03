@@ -11,7 +11,7 @@
         
     .EXAMPLE
         PS C:\> Get-RemainingMinutes -InputObject $TokenObject
-
+        
         This will analyse the expires_on and compare it with NOW, to see how many minutes there is left before the token will be expired.
         
     .LINK
