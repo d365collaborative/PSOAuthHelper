@@ -12,8 +12,15 @@ Invoke a refresh token authorization flow
 
 ## SYNTAX
 
+### Object
 ```
-Invoke-RefreshToken [-AuthProviderUri] <String> [[-ClientId] <String>] [[-RefreshToken] <String>]
+Invoke-RefreshToken [-AuthProviderUri] <String> [-ClientId] <String> [[-InputObject] <PSObject>]
+ [<CommonParameters>]
+```
+
+### Simple
+```
+Invoke-RefreshToken [-AuthProviderUri] <String> [-ClientId] <String> [-RefreshToken] <String>
  [<CommonParameters>]
 ```
 
@@ -38,13 +45,25 @@ The URL / URI for the authorization server
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: Object
 Aliases:
 
 Required: True
 Position: 2
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+```yaml
+Type: String
+Parameter Sets: Simple
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -53,13 +72,25 @@ The Client Id that you want to use for the authentication process
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: Object
 Aliases:
 
-Required: False
+Required: True
 Position: 3
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+```yaml
+Type: String
+Parameter Sets: Simple
+Aliases:
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -68,13 +99,28 @@ The Refresh Token that you want to use for the authentication process
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: Simple
+Aliases: Token, refresh_token
+
+Required: True
+Position: 4
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -InputObject
+{{Fill InputObject Description}}
+
+```yaml
+Type: PSObject
+Parameter Sets: Object
 Aliases:
 
 Required: False
 Position: 4
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

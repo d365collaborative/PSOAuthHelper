@@ -41,6 +41,7 @@
 	# Functions to export from this module
 	FunctionsToExport = @(
 							'Get-BearerToken',
+							'Get-RemainingMinutes',
 
 							'Invoke-ClientCredentialsGrant',
 							'Invoke-PasswordGrant',
