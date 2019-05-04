@@ -49,7 +49,7 @@ Describe "Validating the module manifest" {
 				}
 			}else {
 				It "The file $assembly should load from the GAC" {
-					Add-Type -AssemblyName $assembly | Should -Not -Throw
+					{Add-Type -AssemblyName $assembly} | Should -Not -Throw
 				}
 			}
 			
