@@ -1,5 +1,5 @@
 $script:ModuleRoot = $PSScriptRoot
-$script:ModuleVersion = '0.2.4'
+$script:ModuleVersion = '0.2.5'
 
 # Detect whether at some level dotsourcing was enforced
 $script:doDotSource = Get-PSFConfigValue -FullName PSOAuthHelper.Import.DoDotSource -Fallback $false

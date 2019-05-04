@@ -3,7 +3,7 @@
 	RootModule = 'PSOAuthHelper.psm1'
 
 	# Version number of this module.
-	ModuleVersion = '0.2.4'
+	ModuleVersion = '0.2.5'
 	
 	# ID used to uniquely identify this module
 	GUID = 'c2de095c-331d-4568-833f-e70bedc8fa5e'
@@ -30,7 +30,9 @@
 	)
 	
 	# Assemblies that must be loaded prior to importing this module
-	# RequiredAssemblies = @('bin\PSOAuthHelper.dll')
+	RequiredAssemblies = @(
+						'System.Web'
+						, 'System.Net.Http')
 	
 	# Type files (.ps1xml) to be loaded when importing this module
 	# TypesToProcess = @('xml\PSOAuthHelper.Types.ps1xml')
