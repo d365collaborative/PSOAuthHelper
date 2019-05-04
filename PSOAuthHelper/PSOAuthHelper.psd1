@@ -31,7 +31,7 @@
 	
 	# Assemblies that must be loaded prior to importing this module
 	RequiredAssemblies = @(
-						'System.Web'
+						'System.Web2'
 						, 'System.Net.Http')
 	
 	# Type files (.ps1xml) to be loaded when importing this module
