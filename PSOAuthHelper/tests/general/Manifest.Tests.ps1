@@ -40,7 +40,7 @@ Describe "Validating the module manifest" {
 		
 
 		
-		Temporary disabling the RequiredAssembly validation.
+		#Temporary disabling the RequiredAssembly validation.
 		foreach ($assembly in $manifest.RequiredAssemblies)
 		{
 			if($assembly -contains ".dll"){
