@@ -90,20 +90,20 @@ function Invoke-Authorization {
 
 
     $parms = @{}
-    $parms.resource = [System.Web.HttpUtility]::UrlEncode($Resource)
-    $parms.grant_type = [System.Web.HttpUtility]::UrlEncode($GrantType)
+    $parms.resource = [System.Uri]::EscapeDataString($Resource)
+    $parms.grant_type = [System.Uri]::EscapeDataString($GrantType)
     
-    if (-not ($ClientId -eq "")) {$parms.client_id = [System.Web.HttpUtility]::UrlEncode($ClientId)}
+    if (-not ($ClientId -eq "")) {$parms.client_id = [System.Uri]::EscapeDataString($ClientId)}
 
-    if (-not ($ClientSecret -eq "")) {$parms.client_secret = [System.Web.HttpUtility]::UrlEncode($ClientSecret)}
+    if (-not ($ClientSecret -eq "")) {$parms.client_secret = [System.Uri]::EscapeDataString($ClientSecret)}
 
-    if (-not ($Username -eq "")) {$parms.username = [System.Web.HttpUtility]::UrlEncode($Username)}
+    if (-not ($Username -eq "")) {$parms.username = [System.Uri]::EscapeDataString($Username)}
 
-    if (-not ($Password -eq "")) {$parms.password = [System.Web.HttpUtility]::UrlEncode($Password)}
+    if (-not ($Password -eq "")) {$parms.password = [System.Uri]::EscapeDataString($Password)}
 
-    if (-not ($Scope -eq "")) {$parms.scope = [System.Web.HttpUtility]::UrlEncode($Scope)}
+    if (-not ($Scope -eq "")) {$parms.scope = [System.Uri]::EscapeDataString($Scope)}
 
-    if (-not ($RefreshToken -eq "")) {$parms.refresh_token = [System.Web.HttpUtility]::UrlEncode($RefreshToken)}
+    if (-not ($RefreshToken -eq "")) {$parms.refresh_token = [System.Uri]::EscapeDataString($RefreshToken)}
     
 
     $body = (Convert-HashToArgStringSwitch -InputObject $parms -KeyPrefix "&" -ValuePrefix "=") -join ""
