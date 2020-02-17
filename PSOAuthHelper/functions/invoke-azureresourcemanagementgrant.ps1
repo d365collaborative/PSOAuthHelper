@@ -56,8 +56,8 @@ function Invoke-AzureResourceManagementGrant {
     )
 
     # Username and Password
-    if ([String]::IsNullOrEmpty($Username) -and [String]::IsNullOrEmpty($Password)) {
-        $credentials = Get-Credential -Message "Enter your credentials."
+    if ([String]::IsNullOrEmpty($Password)) {
+        $credentials = Get-Credential -Message "Enter your credentials." -UserName $Username
     }
     else {
         $passwordSecured = ConvertTo-SecureString -String $Password -AsPlainText -Force
