@@ -60,31 +60,23 @@ function Invoke-Authorization {
     [CmdletBinding()]
     [OutputType('System.String')]
     param (
-        [Parameter(Mandatory = $true, Position = 1)]
+        [Parameter(Mandatory = $true)]
         [string] $AuthProviderUri,
 
-        [Parameter(Mandatory = $false, Position = 2)]
         [string] $Resource,
 
-        [Parameter(Mandatory = $true, Position = 3)]
         [string] $GrantType,
 
-        [Parameter(Mandatory = $false, Position = 4)]
         [string] $ClientId,
 
-        [Parameter(Mandatory = $false, Position = 5)]
         [string] $ClientSecret,
 
-        [Parameter(Mandatory = $false, Position = 6)]
         [string] $Username,
 
-        [Parameter(Mandatory = $false, Position = 7)]
         [string] $Password,
 
-        [Parameter(Mandatory = $false, Position = 8)]
         [string] $Scope,
 
-        [Parameter(Mandatory = $false, Position = 9)]
         [string] $RefreshToken
     )
 

@@ -1,38 +1,38 @@
 @{
 	# Script module or binary module file associated with this manifest
-	RootModule = 'PSOAuthHelper.psm1'
+	RootModule         = 'PSOAuthHelper.psm1'
 
 	# Version number of this module.
-	ModuleVersion = '0.2.5'
+	ModuleVersion      = '0.2.5'
 	
 	# ID used to uniquely identify this module
-	GUID = 'c2de095c-331d-4568-833f-e70bedc8fa5e'
+	GUID               = 'c2de095c-331d-4568-833f-e70bedc8fa5e'
 	
 	# Author of this module
-	Author            = 'Mötz Jensen'
+	Author             = 'Mötz Jensen'
 	
 	# Company or vendor of this module
-	CompanyName = ''
+	CompanyName        = ''
 	
 	# Copyright statement for this module
-	Copyright         = '(c) 2019 Mötz Jensen. All rights reserved.'
+	Copyright          = '(c) 2019 Mötz Jensen. All rights reserved.'
 	
 	# Description of the functionality provided by this module
-	Description = 'A simple module that helps you with all the dirty details while trying to authenticate against different OAuth 2.0 endpoints.'
+	Description        = 'A simple module that helps you with all the dirty details while trying to authenticate against different OAuth 2.0 endpoints.'
 	
 	# Minimum version of the Windows PowerShell engine required by this module
-	PowerShellVersion = '5.0'
+	PowerShellVersion  = '5.0'
 	
 	# Modules that must be imported into the global environment prior to importing
 	# this module
-	RequiredModules = @(
-		@{ ModuleName='PSFramework'; ModuleVersion='1.0.0' }
+	RequiredModules    = @(
+		@{ ModuleName = 'PSFramework'; ModuleVersion = '1.0.0' }
 	)
 	
 	# Assemblies that must be loaded prior to importing this module
 	RequiredAssemblies = @(
-						'System.Web'
-						, 'System.Net.Http')
+		'System.Web'
+		, 'System.Net.Http')
 	
 	# Type files (.ps1xml) to be loaded when importing this module
 	# TypesToProcess = @('xml\PSOAuthHelper.Types.ps1xml')
@@ -41,34 +41,35 @@
 	# FormatsToProcess = @('xml\PSOAuthHelper.Format.ps1xml')
 	
 	# Functions to export from this module
-	FunctionsToExport = @(
-							'Get-BearerToken',
-							'Get-RemainingMinutes',
+	FunctionsToExport  = @(
+		'Get-BearerToken',
+		'Get-RemainingMinutes',
 
-							'Invoke-ClientCredentialsGrant',
-							'Invoke-PasswordGrant',
-							'Invoke-RefreshToken',
+		'Invoke-AzureResourceManagementGrant',
+		'Invoke-ClientCredentialsGrant',
+		'Invoke-PasswordGrant',
+		'Invoke-RefreshToken',
 
-							'New-AuthorizationHeaderBearerToken'
+		'New-AuthorizationHeaderBearerToken'
 	)
 	
 	# Cmdlets to export from this module
-	CmdletsToExport = ''
+	CmdletsToExport    = ''
 	
 	# Variables to export from this module
-	VariablesToExport = ''
+	VariablesToExport  = ''
 	
 	# Aliases to export from this module
-	AliasesToExport = ''
+	AliasesToExport    = ''
 	
 	# List of all modules packaged with this module
-	ModuleList = @()
+	ModuleList         = @()
 	
 	# List of all files packaged with this module
-	FileList = @()
+	FileList           = @()
 	
 	# Private data to pass to the module specified in ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
-	PrivateData = @{
+	PrivateData        = @{
 		
 		#Support for PowerShellGet galleries.
 		PSData = @{
@@ -89,7 +90,7 @@
 			# ReleaseNotes = ''
 
 			# Indicates this is a pre-release/testing version of the module.
-            IsPrerelease = 'True'
+			IsPrerelease = 'True'
 			
 		} # End of PSData hashtable
 		

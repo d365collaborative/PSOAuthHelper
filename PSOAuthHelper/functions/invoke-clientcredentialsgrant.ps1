@@ -38,21 +38,20 @@ function Invoke-ClientCredentialsGrant {
     [CmdletBinding()]
     [OutputType()]
     param (
-        [Parameter(Mandatory = $True, Position = 1)]
+        [Parameter(Mandatory = $true)]
         [string] $AuthProviderUri,
 
-        [Parameter(Mandatory = $true, Position = 2)]
-        [Alias('URL')]
-        [Alias('URI')]
+        [Parameter(Mandatory = $true)]
+        [Alias('Url')]
+        [Alias('Uri')]
         [string] $Resource,
 
-        [Parameter(Mandatory = $false, Position = 4)]
+        [Parameter(Mandatory = $true)]
         [string] $ClientId,
 
-        [Parameter(Mandatory = $false, Position = 5)]
+        [Parameter(Mandatory = $true)]
         [string] $ClientSecret,
 
-        [Parameter(Mandatory = $false, Position = 8)]
         [string] $Scope
     )
 
