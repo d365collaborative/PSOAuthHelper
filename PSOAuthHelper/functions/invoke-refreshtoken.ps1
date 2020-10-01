@@ -18,10 +18,10 @@
     .PARAMETER InputObject
         The object you received from any of the Invoke-* commands that returns an access token
         
-    .PARAMETER EnableException
+   .PARAMETER EnableException
         This parameters disables user-friendly warnings and enables the throwing of exceptions
         This is less user friendly, but allows catching exceptions in calling scripts
-        
+
     .EXAMPLE
         PS C:\> Invoke-RefreshToken -AuthProviderUri "https://login.microsoftonline.com/common/oauth2/token" -ClientId "dea8d7a9-1602-4429-b138-111111111111" -RefreshToken "Tsdljfasfe2j32324"
         
@@ -65,10 +65,12 @@ function Invoke-RefreshToken {
         [switch] $EnableException
     )
 
-    if ($PsCmdlet.ParameterSetName -eq "Simple") {
-        Invoke-Authorization @PSBoundParameters -GrantType "refresh_token"
-    }
-    else {
-        Invoke-Authorization -AuthProviderUri $AuthProviderUri -ClientId $ClientId -GrantType "refresh_token" -RefreshToken $InputObject.refresh_token
+    process {
+        if ($PsCmdlet.ParameterSetName -eq "Simple") {
+            Invoke-Authorization @PSBoundParameters -GrantType "refresh_token"
+        }
+        else {
+            Invoke-Authorization -AuthProviderUri $AuthProviderUri -ClientId $ClientId -GrantType "refresh_token" -RefreshToken $InputObject.refresh_token
+        }
     }
 }

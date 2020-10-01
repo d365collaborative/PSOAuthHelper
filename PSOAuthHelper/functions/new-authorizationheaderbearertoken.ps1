@@ -38,12 +38,14 @@ function New-AuthorizationHeaderBearerToken {
         [string] $BearerToken
     )
 
-    if (-not ($BearerToken.StartsWith("Bearer "))) {
-        $BearerToken = "Bearer $BearerToken"
-    }
+    process {
+        if (-not ($BearerToken.StartsWith("Bearer "))) {
+            $BearerToken = "Bearer $BearerToken"
+        }
 
-    @{
-        "Authorization" = "$BearerToken"
-        "Host"          = ([uri]$URL).Host
+        @{
+            "Authorization" = "$BearerToken"
+            "Host"          = ([uri]$URL).Host
+        }
     }
 }

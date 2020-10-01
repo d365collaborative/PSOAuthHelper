@@ -43,10 +43,12 @@ function Get-BearerToken {
         [switch] $Raw
     )
 
-    if ($Raw) {
-        $($InputObject.access_token)
-    }
-    else {
-        "Bearer $($InputObject.access_token)"
+    process {
+        if ($Raw) {
+            $($InputObject.access_token)
+        }
+        else {
+            "Bearer $($InputObject.access_token)"
+        }
     }
 }
