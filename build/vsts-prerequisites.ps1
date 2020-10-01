@@ -6,4 +6,5 @@ foreach ($module in $modules) {
     Import-Module $module -Force -PassThru
 }
 
-Import-Module "Pester" -MaximumVersion 4.99.99 -Force
+Install-Module "Pester" -MaximumVersion 4.99.99 -Force -SkipPublisherCheck
+Import-Module "Pester" -MaximumVersion 4.99.99 -Force -PassThru
