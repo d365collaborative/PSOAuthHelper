@@ -15,6 +15,10 @@
     .PARAMETER Password
         Password for the user that you want to authenticate as
         
+    .PARAMETER EnableException
+        This parameters disables user-friendly warnings and enables the throwing of exceptions
+        This is less user friendly, but allows catching exceptions in calling scripts
+
     .EXAMPLE
         PS C:\> Invoke-AzureResourceManagementGrant -TenantName "Contoso.onmicrosoft.com"
         
@@ -53,7 +57,9 @@ function Invoke-AzureResourceManagementGrant {
 
         [string] $Username,
 
-        [string] $Password
+        [string] $Password,
+
+        [switch] $EnableException
     )
 
     # Username and Password

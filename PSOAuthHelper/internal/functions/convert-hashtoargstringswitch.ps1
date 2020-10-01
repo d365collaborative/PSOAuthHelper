@@ -61,7 +61,7 @@ function Convert-HashToArgStringSwitch {
 
     foreach ($key in $InputObject.Keys) {
         $value = "{0}" -f $InputObject.Item($key).ToString()
-        if (-not $KeepCase) {$value = $value.ToLower()}
+        if (-not $KeepCase) { $value = $value.ToLower() }
         "$KeyPrefix$($key)$ValuePrefix$($value)"
     }
 }
