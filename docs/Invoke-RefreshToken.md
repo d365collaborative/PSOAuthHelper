@@ -15,13 +15,13 @@ Invoke a refresh token authorization flow
 ### Object
 ```
 Invoke-RefreshToken [-AuthProviderUri] <String> [-ClientId] <String> [[-InputObject] <PSObject>]
- [<CommonParameters>]
+ [-EnableException] [<CommonParameters>]
 ```
 
 ### Simple
 ```
 Invoke-RefreshToken [-AuthProviderUri] <String> [-ClientId] <String> [-RefreshToken] <String>
- [<CommonParameters>]
+ [-EnableException] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -124,9 +124,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -EnableException
+This parameters disables user-friendly warnings and enables the throwing of exceptions
+This is less user friendly, but allows catching exceptions in calling scripts
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
