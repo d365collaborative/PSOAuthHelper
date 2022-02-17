@@ -46,15 +46,17 @@
 function Invoke-PasswordGrant {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword", "")]
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPassWordParams", "")]
-    [CmdletBinding()]
+    [CmdletBinding(DefaultParameterSetName = "Default")]
     [OutputType()]
     param (
-        [Parameter(Mandatory = $true)]
+        [Parameter(ParameterSetName = "Default", Mandatory = $true)]
         [string] $AuthProviderUri,
 
-        [Parameter(Mandatory = $true)]
-        [Alias('URL')]
-        [Alias('URI')]
+        [Parameter(ParameterSetName = "Default", Mandatory = $true)]
+        [Parameter(ParameterSetName = "v1", Mandatory = $true)]
+        [Parameter(ParameterSetName = "v2", Mandatory = $false)]
+        [Alias('Url')]
+        [Alias('Uri')]
         [string] $Resource,
 
         [Parameter(Mandatory = $true)]
@@ -66,10 +68,35 @@ function Invoke-PasswordGrant {
         [Parameter(Mandatory = $true)]
         [string] $Password,
 
+        [Parameter(ParameterSetName = "v1", Mandatory = $true)]
+        [Parameter(ParameterSetName = "v2", Mandatory = $true)]
+        [Alias('Tenant')]
+        [string] $TenantId,
+
+        [Parameter(ParameterSetName = "Default", Mandatory = $false)]
+        [Parameter(ParameterSetName = "v1", Mandatory = $false)]
+        [Parameter(ParameterSetName = "v2", Mandatory = $true)]
         [string] $Scope,
+
+        [Parameter(ParameterSetName = "v1", Mandatory = $true)]
+        [switch] $AuthEndpointV1,
+
+        [Parameter(ParameterSetName = "v2", Mandatory = $true)]
+        [switch] $AuthEndpointV2,
 
         [switch] $EnableException
     )
+
+    $parms = Get-DeepClone -InputObject $PSBoundParameters
+    $parms.Remove("AuthEndpointV1") > $null
+    $parms.Remove("AuthEndpointV2") > $null
+    $parms.Remove("TenantId") > $null
+
+    if (-not $AuthProviderUri) {
+        $AuthProviderUri = if ($AuthEndpointV1) { "https://login.microsoftonline.com/{0}/oauth2/token" -f $TenantId } else { "https://login.microsoftonline.com/{0}/oauth2/v2.0/token" -f $TenantId }
+    }
+
+    $parms.AuthProviderUri = $AuthProviderUri
 
     Invoke-Authorization @PSBoundParameters -GrantType "password"
 }

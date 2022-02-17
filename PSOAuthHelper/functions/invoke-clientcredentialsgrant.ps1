@@ -39,13 +39,15 @@
 #>
 
 function Invoke-ClientCredentialsGrant {
-    [CmdletBinding()]
+    [CmdletBinding(DefaultParameterSetName = "Default")]
     [OutputType()]
     param (
-        [Parameter(Mandatory = $true)]
+        [Parameter(ParameterSetName = "Default", Mandatory = $true)]
         [string] $AuthProviderUri,
 
-        [Parameter(Mandatory = $true)]
+        [Parameter(ParameterSetName = "Default", Mandatory = $true)]
+        [Parameter(ParameterSetName = "v1", Mandatory = $true)]
+        [Parameter(ParameterSetName = "v2", Mandatory = $false)]
         [Alias('Url')]
         [Alias('Uri')]
         [string] $Resource,
@@ -56,10 +58,35 @@ function Invoke-ClientCredentialsGrant {
         [Parameter(Mandatory = $true)]
         [string] $ClientSecret,
 
+        [Parameter(ParameterSetName = "v1", Mandatory = $true)]
+        [Parameter(ParameterSetName = "v2", Mandatory = $true)]
+        [Alias('Tenant')]
+        [string] $TenantId,
+
+        [Parameter(ParameterSetName = "Default", Mandatory = $false)]
+        [Parameter(ParameterSetName = "v1", Mandatory = $false)]
+        [Parameter(ParameterSetName = "v2", Mandatory = $true)]
         [string] $Scope,
+
+        [Parameter(ParameterSetName = "v1", Mandatory = $true)]
+        [switch] $AuthEndpointV1,
+
+        [Parameter(ParameterSetName = "v2", Mandatory = $true)]
+        [switch] $AuthEndpointV2,
 
         [switch] $EnableException
     )
 
-    Invoke-Authorization @PSBoundParameters -GrantType "client_credentials"
+    $parms = Get-DeepClone -InputObject $PSBoundParameters
+    $parms.Remove("AuthEndpointV1") > $null
+    $parms.Remove("AuthEndpointV2") > $null
+    $parms.Remove("TenantId") > $null
+
+    if (-not $AuthProviderUri) {
+        $AuthProviderUri = if ($AuthEndpointV1) { "https://login.microsoftonline.com/{0}/oauth2/token" -f $TenantId } else { "https://login.microsoftonline.com/{0}/oauth2/v2.0/token" -f $TenantId }
+    }
+
+    $parms.AuthProviderUri = $AuthProviderUri
+    
+    Invoke-Authorization @parms -GrantType "client_credentials"
 }

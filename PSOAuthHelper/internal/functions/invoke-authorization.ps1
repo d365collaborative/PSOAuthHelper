@@ -88,8 +88,9 @@ function Invoke-Authorization {
 
 
     $parms = @{}
-    $parms.resource = [System.Uri]::EscapeDataString($Resource)
     $parms.grant_type = [System.Uri]::EscapeDataString($GrantType)
+    
+    if (-not ($Resource -eq "")) {$parms.resource = [System.Uri]::EscapeDataString($Resource)}
     
     if (-not ($ClientId -eq "")) {$parms.client_id = [System.Uri]::EscapeDataString($ClientId)}
 
