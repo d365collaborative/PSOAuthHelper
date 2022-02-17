@@ -137,7 +137,9 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId
-{{ Fill TenantId Description }}
+The tenant id for the organization that you want to work agains
+
+It can be the full guid id OR it can be the current primary domain name
 
 ```yaml
 Type: String
@@ -179,7 +181,7 @@ Accept wildcard characters: False
 ```
 
 ### -AuthEndpointV1
-{{ Fill AuthEndpointV1 Description }}
+Instruct the cmdlet to work agains the v1 endpoint in Azure AD
 
 ```yaml
 Type: SwitchParameter
@@ -194,7 +196,7 @@ Accept wildcard characters: False
 ```
 
 ### -AuthEndpointV2
-{{ Fill AuthEndpointV2 Description }}
+Instruct the cmdlet to work agains the v2 endpoint in Azure AD
 
 ```yaml
 Type: SwitchParameter
