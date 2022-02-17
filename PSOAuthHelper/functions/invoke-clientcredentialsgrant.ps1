@@ -18,9 +18,20 @@
     .PARAMETER ClientSecret
         The Client Secret that you want to use for the authentication process
         
+    .PARAMETER TenantId
+        The tenant id for the organization that you want to work agains
+
+        It can be the full guid id OR it can be the current primary domain name
+
     .PARAMETER Scope
         The scope details that you want the token to valid for
         
+    .PARAMETER AuthEndpointV1
+        Instruct the cmdlet to work agains the v1 endpoint in Azure AD
+
+    .PARAMETER AuthEndpointV2
+        Instruct the cmdlet to work agains the v2 endpoint in Azure AD
+    
     .PARAMETER EnableException
         This parameters disables user-friendly warnings and enables the throwing of exceptions
         This is less user friendly, but allows catching exceptions in calling scripts
