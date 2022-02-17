@@ -12,9 +12,22 @@ Invoke a Client Credentials authorization flow
 
 ## SYNTAX
 
+### Default (Default)
 ```
-Invoke-ClientCredentialsGrant [-AuthProviderUri] <String> [-Resource] <String> [-ClientId] <String>
- [-ClientSecret] <String> [[-Scope] <String>] [-EnableException] [<CommonParameters>]
+Invoke-ClientCredentialsGrant -AuthProviderUri <String> -Resource <String> -ClientId <String>
+ -ClientSecret <String> [-Scope <String>] [-EnableException] [<CommonParameters>]
+```
+
+### v2
+```
+Invoke-ClientCredentialsGrant [-Resource <String>] -ClientId <String> -ClientSecret <String> -TenantId <String>
+ -Scope <String> [-AuthEndpointV2] [-EnableException] [<CommonParameters>]
+```
+
+### v1
+```
+Invoke-ClientCredentialsGrant -Resource <String> -ClientId <String> -ClientSecret <String> -TenantId <String>
+ [-Scope <String>] [-AuthEndpointV1] [-EnableException] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -39,11 +52,11 @@ The URL / URI for the authorization server
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: Default
 Aliases:
 
 Required: True
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -54,11 +67,23 @@ The URL / URI for the protected resource you want the token to be valid to
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: Default, v1
 Aliases: Uri, Url
 
 Required: True
-Position: 2
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+```yaml
+Type: String
+Parameter Sets: v2
+Aliases: Uri, Url
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -73,7 +98,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 3
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -88,7 +113,22 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 4
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TenantId
+{{ Fill TenantId Description }}
+
+```yaml
+Type: String
+Parameter Sets: v2, v1
+Aliases: Tenant
+
+Required: True
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -99,12 +139,54 @@ The scope details that you want the token to valid for
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: Default, v1
 Aliases:
 
 Required: False
-Position: 5
+Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+```yaml
+Type: String
+Parameter Sets: v2
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AuthEndpointV1
+{{ Fill AuthEndpointV1 Description }}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: v1
+Aliases:
+
+Required: True
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AuthEndpointV2
+{{ Fill AuthEndpointV2 Description }}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: v2
+Aliases:
+
+Required: True
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
