@@ -8,7 +8,7 @@
 	
 	Describe "Ensuring unchanged command signature" {
 		It "should have the expected parameter sets" {
-			(Get-Command Invoke-PasswordGrant).ParameterSets.Name | Should -Be '__AllParameterSets'
+			(Get-Command Invoke-PasswordGrant).ParameterSets.Name | Should -Be 'Default', 'v2', 'v1'
 		}
 		
 		It 'Should have the expected parameter AuthProviderUri' {
@@ -16,26 +16,38 @@
 			$parameter.Name | Should -Be 'AuthProviderUri'
 			$parameter.ParameterType.ToString() | Should -Be System.String
 			$parameter.IsDynamic | Should -Be $False
-			$parameter.ParameterSets.Keys | Should -Be '__AllParameterSets'
-			$parameter.ParameterSets.Keys | Should -Contain '__AllParameterSets'
-			$parameter.ParameterSets['__AllParameterSets'].IsMandatory | Should -Be $True
-			$parameter.ParameterSets['__AllParameterSets'].Position | Should -Be 0
-			$parameter.ParameterSets['__AllParameterSets'].ValueFromPipeline | Should -Be $False
-			$parameter.ParameterSets['__AllParameterSets'].ValueFromPipelineByPropertyName | Should -Be $False
-			$parameter.ParameterSets['__AllParameterSets'].ValueFromRemainingArguments | Should -Be $False
+			$parameter.ParameterSets.Keys | Should -Be 'Default'
+			$parameter.ParameterSets.Keys | Should -Contain 'Default'
+			$parameter.ParameterSets['Default'].IsMandatory | Should -Be $True
+			$parameter.ParameterSets['Default'].Position | Should -Be -2147483648
+			$parameter.ParameterSets['Default'].ValueFromPipeline | Should -Be $False
+			$parameter.ParameterSets['Default'].ValueFromPipelineByPropertyName | Should -Be $False
+			$parameter.ParameterSets['Default'].ValueFromRemainingArguments | Should -Be $False
 		}
 		It 'Should have the expected parameter Resource' {
 			$parameter = (Get-Command Invoke-PasswordGrant).Parameters['Resource']
 			$parameter.Name | Should -Be 'Resource'
 			$parameter.ParameterType.ToString() | Should -Be System.String
 			$parameter.IsDynamic | Should -Be $False
-			$parameter.ParameterSets.Keys | Should -Be '__AllParameterSets'
-			$parameter.ParameterSets.Keys | Should -Contain '__AllParameterSets'
-			$parameter.ParameterSets['__AllParameterSets'].IsMandatory | Should -Be $True
-			$parameter.ParameterSets['__AllParameterSets'].Position | Should -Be 1
-			$parameter.ParameterSets['__AllParameterSets'].ValueFromPipeline | Should -Be $False
-			$parameter.ParameterSets['__AllParameterSets'].ValueFromPipelineByPropertyName | Should -Be $False
-			$parameter.ParameterSets['__AllParameterSets'].ValueFromRemainingArguments | Should -Be $False
+			$parameter.ParameterSets.Keys | Should -Be 'v2', 'v1', 'Default'
+			$parameter.ParameterSets.Keys | Should -Contain 'v2'
+			$parameter.ParameterSets['v2'].IsMandatory | Should -Be $False
+			$parameter.ParameterSets['v2'].Position | Should -Be -2147483648
+			$parameter.ParameterSets['v2'].ValueFromPipeline | Should -Be $False
+			$parameter.ParameterSets['v2'].ValueFromPipelineByPropertyName | Should -Be $False
+			$parameter.ParameterSets['v2'].ValueFromRemainingArguments | Should -Be $False
+			$parameter.ParameterSets.Keys | Should -Contain 'v1'
+			$parameter.ParameterSets['v1'].IsMandatory | Should -Be $True
+			$parameter.ParameterSets['v1'].Position | Should -Be -2147483648
+			$parameter.ParameterSets['v1'].ValueFromPipeline | Should -Be $False
+			$parameter.ParameterSets['v1'].ValueFromPipelineByPropertyName | Should -Be $False
+			$parameter.ParameterSets['v1'].ValueFromRemainingArguments | Should -Be $False
+			$parameter.ParameterSets.Keys | Should -Contain 'Default'
+			$parameter.ParameterSets['Default'].IsMandatory | Should -Be $True
+			$parameter.ParameterSets['Default'].Position | Should -Be -2147483648
+			$parameter.ParameterSets['Default'].ValueFromPipeline | Should -Be $False
+			$parameter.ParameterSets['Default'].ValueFromPipelineByPropertyName | Should -Be $False
+			$parameter.ParameterSets['Default'].ValueFromRemainingArguments | Should -Be $False
 		}
 		It 'Should have the expected parameter ClientId' {
 			$parameter = (Get-Command Invoke-PasswordGrant).Parameters['ClientId']
@@ -45,7 +57,7 @@
 			$parameter.ParameterSets.Keys | Should -Be '__AllParameterSets'
 			$parameter.ParameterSets.Keys | Should -Contain '__AllParameterSets'
 			$parameter.ParameterSets['__AllParameterSets'].IsMandatory | Should -Be $True
-			$parameter.ParameterSets['__AllParameterSets'].Position | Should -Be 2
+			$parameter.ParameterSets['__AllParameterSets'].Position | Should -Be -2147483648
 			$parameter.ParameterSets['__AllParameterSets'].ValueFromPipeline | Should -Be $False
 			$parameter.ParameterSets['__AllParameterSets'].ValueFromPipelineByPropertyName | Should -Be $False
 			$parameter.ParameterSets['__AllParameterSets'].ValueFromRemainingArguments | Should -Be $False
@@ -58,7 +70,7 @@
 			$parameter.ParameterSets.Keys | Should -Be '__AllParameterSets'
 			$parameter.ParameterSets.Keys | Should -Contain '__AllParameterSets'
 			$parameter.ParameterSets['__AllParameterSets'].IsMandatory | Should -Be $True
-			$parameter.ParameterSets['__AllParameterSets'].Position | Should -Be 3
+			$parameter.ParameterSets['__AllParameterSets'].Position | Should -Be -2147483648
 			$parameter.ParameterSets['__AllParameterSets'].ValueFromPipeline | Should -Be $False
 			$parameter.ParameterSets['__AllParameterSets'].ValueFromPipelineByPropertyName | Should -Be $False
 			$parameter.ParameterSets['__AllParameterSets'].ValueFromRemainingArguments | Should -Be $False
@@ -71,23 +83,80 @@
 			$parameter.ParameterSets.Keys | Should -Be '__AllParameterSets'
 			$parameter.ParameterSets.Keys | Should -Contain '__AllParameterSets'
 			$parameter.ParameterSets['__AllParameterSets'].IsMandatory | Should -Be $True
-			$parameter.ParameterSets['__AllParameterSets'].Position | Should -Be 4
+			$parameter.ParameterSets['__AllParameterSets'].Position | Should -Be -2147483648
 			$parameter.ParameterSets['__AllParameterSets'].ValueFromPipeline | Should -Be $False
 			$parameter.ParameterSets['__AllParameterSets'].ValueFromPipelineByPropertyName | Should -Be $False
 			$parameter.ParameterSets['__AllParameterSets'].ValueFromRemainingArguments | Should -Be $False
+		}
+		It 'Should have the expected parameter TenantId' {
+			$parameter = (Get-Command Invoke-PasswordGrant).Parameters['TenantId']
+			$parameter.Name | Should -Be 'TenantId'
+			$parameter.ParameterType.ToString() | Should -Be System.String
+			$parameter.IsDynamic | Should -Be $False
+			$parameter.ParameterSets.Keys | Should -Be 'v2', 'v1'
+			$parameter.ParameterSets.Keys | Should -Contain 'v2'
+			$parameter.ParameterSets['v2'].IsMandatory | Should -Be $True
+			$parameter.ParameterSets['v2'].Position | Should -Be -2147483648
+			$parameter.ParameterSets['v2'].ValueFromPipeline | Should -Be $False
+			$parameter.ParameterSets['v2'].ValueFromPipelineByPropertyName | Should -Be $False
+			$parameter.ParameterSets['v2'].ValueFromRemainingArguments | Should -Be $False
+			$parameter.ParameterSets.Keys | Should -Contain 'v1'
+			$parameter.ParameterSets['v1'].IsMandatory | Should -Be $True
+			$parameter.ParameterSets['v1'].Position | Should -Be -2147483648
+			$parameter.ParameterSets['v1'].ValueFromPipeline | Should -Be $False
+			$parameter.ParameterSets['v1'].ValueFromPipelineByPropertyName | Should -Be $False
+			$parameter.ParameterSets['v1'].ValueFromRemainingArguments | Should -Be $False
 		}
 		It 'Should have the expected parameter Scope' {
 			$parameter = (Get-Command Invoke-PasswordGrant).Parameters['Scope']
 			$parameter.Name | Should -Be 'Scope'
 			$parameter.ParameterType.ToString() | Should -Be System.String
 			$parameter.IsDynamic | Should -Be $False
-			$parameter.ParameterSets.Keys | Should -Be '__AllParameterSets'
-			$parameter.ParameterSets.Keys | Should -Contain '__AllParameterSets'
-			$parameter.ParameterSets['__AllParameterSets'].IsMandatory | Should -Be $False
-			$parameter.ParameterSets['__AllParameterSets'].Position | Should -Be 5
-			$parameter.ParameterSets['__AllParameterSets'].ValueFromPipeline | Should -Be $False
-			$parameter.ParameterSets['__AllParameterSets'].ValueFromPipelineByPropertyName | Should -Be $False
-			$parameter.ParameterSets['__AllParameterSets'].ValueFromRemainingArguments | Should -Be $False
+			$parameter.ParameterSets.Keys | Should -Be 'v2', 'v1', 'Default'
+			$parameter.ParameterSets.Keys | Should -Contain 'v2'
+			$parameter.ParameterSets['v2'].IsMandatory | Should -Be $True
+			$parameter.ParameterSets['v2'].Position | Should -Be -2147483648
+			$parameter.ParameterSets['v2'].ValueFromPipeline | Should -Be $False
+			$parameter.ParameterSets['v2'].ValueFromPipelineByPropertyName | Should -Be $False
+			$parameter.ParameterSets['v2'].ValueFromRemainingArguments | Should -Be $False
+			$parameter.ParameterSets.Keys | Should -Contain 'v1'
+			$parameter.ParameterSets['v1'].IsMandatory | Should -Be $False
+			$parameter.ParameterSets['v1'].Position | Should -Be -2147483648
+			$parameter.ParameterSets['v1'].ValueFromPipeline | Should -Be $False
+			$parameter.ParameterSets['v1'].ValueFromPipelineByPropertyName | Should -Be $False
+			$parameter.ParameterSets['v1'].ValueFromRemainingArguments | Should -Be $False
+			$parameter.ParameterSets.Keys | Should -Contain 'Default'
+			$parameter.ParameterSets['Default'].IsMandatory | Should -Be $False
+			$parameter.ParameterSets['Default'].Position | Should -Be -2147483648
+			$parameter.ParameterSets['Default'].ValueFromPipeline | Should -Be $False
+			$parameter.ParameterSets['Default'].ValueFromPipelineByPropertyName | Should -Be $False
+			$parameter.ParameterSets['Default'].ValueFromRemainingArguments | Should -Be $False
+		}
+		It 'Should have the expected parameter AuthEndpointV1' {
+			$parameter = (Get-Command Invoke-PasswordGrant).Parameters['AuthEndpointV1']
+			$parameter.Name | Should -Be 'AuthEndpointV1'
+			$parameter.ParameterType.ToString() | Should -Be System.Management.Automation.SwitchParameter
+			$parameter.IsDynamic | Should -Be $False
+			$parameter.ParameterSets.Keys | Should -Be 'v1'
+			$parameter.ParameterSets.Keys | Should -Contain 'v1'
+			$parameter.ParameterSets['v1'].IsMandatory | Should -Be $True
+			$parameter.ParameterSets['v1'].Position | Should -Be -2147483648
+			$parameter.ParameterSets['v1'].ValueFromPipeline | Should -Be $False
+			$parameter.ParameterSets['v1'].ValueFromPipelineByPropertyName | Should -Be $False
+			$parameter.ParameterSets['v1'].ValueFromRemainingArguments | Should -Be $False
+		}
+		It 'Should have the expected parameter AuthEndpointV2' {
+			$parameter = (Get-Command Invoke-PasswordGrant).Parameters['AuthEndpointV2']
+			$parameter.Name | Should -Be 'AuthEndpointV2'
+			$parameter.ParameterType.ToString() | Should -Be System.Management.Automation.SwitchParameter
+			$parameter.IsDynamic | Should -Be $False
+			$parameter.ParameterSets.Keys | Should -Be 'v2'
+			$parameter.ParameterSets.Keys | Should -Contain 'v2'
+			$parameter.ParameterSets['v2'].IsMandatory | Should -Be $True
+			$parameter.ParameterSets['v2'].Position | Should -Be -2147483648
+			$parameter.ParameterSets['v2'].ValueFromPipeline | Should -Be $False
+			$parameter.ParameterSets['v2'].ValueFromPipelineByPropertyName | Should -Be $False
+			$parameter.ParameterSets['v2'].ValueFromRemainingArguments | Should -Be $False
 		}
 		It 'Should have the expected parameter EnableException' {
 			$parameter = (Get-Command Invoke-PasswordGrant).Parameters['EnableException']
@@ -104,10 +173,22 @@
 		}
 	}
 	
-	Describe "Testing parameterset __AllParameterSets" {
+	Describe "Testing parameterset Default" {
 		<#
-		__AllParameterSets -AuthProviderUri -Resource -ClientId -Username -Password
-		__AllParameterSets -AuthProviderUri -Resource -ClientId -Username -Password -Scope -EnableException
+		Default -AuthProviderUri -Resource -ClientId -Username -Password
+		Default -AuthProviderUri -Resource -ClientId -Username -Password -Scope -EnableException
+		#>
+	}
+ 	Describe "Testing parameterset v2" {
+		<#
+		v2 -ClientId -Username -Password -TenantId -Scope -AuthEndpointV2
+		v2 -Resource -ClientId -Username -Password -TenantId -Scope -AuthEndpointV2 -EnableException
+		#>
+	}
+ 	Describe "Testing parameterset v1" {
+		<#
+		v1 -Resource -ClientId -Username -Password -TenantId -AuthEndpointV1
+		v1 -Resource -ClientId -Username -Password -TenantId -Scope -AuthEndpointV1 -EnableException
 		#>
 	}
 
