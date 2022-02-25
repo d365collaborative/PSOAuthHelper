@@ -22,5 +22,5 @@ $global:HelpTestEnumeratedArrays = @(
   "Get-DbaCmObject"       = @("DoNotUse")
 #>
 $global:HelpTestSkipParameterType = @{
-    
+  "Invoke-PasswordGrant"       = @("Resource")
 }
