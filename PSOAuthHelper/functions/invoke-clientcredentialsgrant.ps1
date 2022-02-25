@@ -18,8 +18,19 @@
     .PARAMETER ClientSecret
         The Client Secret that you want to use for the authentication process
         
+    .PARAMETER TenantId
+        The tenant id for the organization that you want to work agains
+        
+        It can be the full guid id OR it can be the current primary domain name
+        
     .PARAMETER Scope
         The scope details that you want the token to valid for
+        
+    .PARAMETER AuthEndpointV1
+        Instruct the cmdlet to work agains the v1 endpoint in Azure AD
+        
+    .PARAMETER AuthEndpointV2
+        Instruct the cmdlet to work agains the v2 endpoint in Azure AD
         
     .PARAMETER EnableException
         This parameters disables user-friendly warnings and enables the throwing of exceptions
@@ -39,13 +50,15 @@
 #>
 
 function Invoke-ClientCredentialsGrant {
-    [CmdletBinding()]
+    [CmdletBinding(DefaultParameterSetName = "Default")]
     [OutputType()]
     param (
-        [Parameter(Mandatory = $true)]
+        [Parameter(ParameterSetName = "Default", Mandatory = $true)]
         [string] $AuthProviderUri,
 
-        [Parameter(Mandatory = $true)]
+        [Parameter(ParameterSetName = "Default", Mandatory = $true)]
+        [Parameter(ParameterSetName = "v1", Mandatory = $true)]
+        [Parameter(ParameterSetName = "v2", Mandatory = $false)]
         [Alias('Url')]
         [Alias('Uri')]
         [string] $Resource,
@@ -56,10 +69,35 @@ function Invoke-ClientCredentialsGrant {
         [Parameter(Mandatory = $true)]
         [string] $ClientSecret,
 
+        [Parameter(ParameterSetName = "v1", Mandatory = $true)]
+        [Parameter(ParameterSetName = "v2", Mandatory = $true)]
+        [Alias('Tenant')]
+        [string] $TenantId,
+
+        [Parameter(ParameterSetName = "Default", Mandatory = $false)]
+        [Parameter(ParameterSetName = "v1", Mandatory = $false)]
+        [Parameter(ParameterSetName = "v2", Mandatory = $true)]
         [string] $Scope,
+
+        [Parameter(ParameterSetName = "v1", Mandatory = $true)]
+        [switch] $AuthEndpointV1,
+
+        [Parameter(ParameterSetName = "v2", Mandatory = $true)]
+        [switch] $AuthEndpointV2,
 
         [switch] $EnableException
     )
 
-    Invoke-Authorization @PSBoundParameters -GrantType "client_credentials"
+    $parms = Get-DeepClone -InputObject $PSBoundParameters
+    $parms.Remove("AuthEndpointV1") > $null
+    $parms.Remove("AuthEndpointV2") > $null
+    $parms.Remove("TenantId") > $null
+
+    if (-not $AuthProviderUri) {
+        $AuthProviderUri = if ($AuthEndpointV1) { "https://login.microsoftonline.com/{0}/oauth2/token" -f $TenantId } else { "https://login.microsoftonline.com/{0}/oauth2/v2.0/token" -f $TenantId }
+    }
+
+    $parms.AuthProviderUri = $AuthProviderUri
+    
+    Invoke-Authorization @parms -GrantType "client_credentials"
 }

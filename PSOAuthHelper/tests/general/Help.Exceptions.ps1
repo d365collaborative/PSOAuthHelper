@@ -1,6 +1,6 @@
 # List of functions that should be ignored
 $global:FunctionHelpTestExceptions = @(
-    
+  "Invoke-PasswordGrant"
 )
 
 <#
@@ -22,5 +22,4 @@ $global:HelpTestEnumeratedArrays = @(
   "Get-DbaCmObject"       = @("DoNotUse")
 #>
 $global:HelpTestSkipParameterType = @{
-    
 }
